@@ -1,0 +1,8 @@
+{
+    "status": ["Single", "Married (1 income)", "Married (2 income)"],
+    "children": ["No children", "With 1 child", "With 2 children", "With 3 children", "With 4 children",
+        "With 5 children"],
+    "canton": ["Commuters", "Aargau", "Appenzell In.", "Appenzell Au.", "Bern", "Basel-Land", "Basel-City",
+        "Freiburg", "Geneva", "Glarus", "Grisons", "Jura", "Lucerne", "Neuenburg", "Nidwalden", "Obwalden", "St. Gallen",
+        "Schaffhausen", "Solothurn", "Schwyz", "Thurgau", "Tessin", "Uri", "Waadt", "Wallis", "Zug", "Zurich", "All"]
+}
