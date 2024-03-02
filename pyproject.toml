@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "grossnetcalculatorswitzerland"
+version = "0.1.0"
+description = "Gross Net Calculator Switzerland"
+authors = ["Ales Loncar <ales.loncar@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+selenium = "^4.17.2"
+inquirerpy = "^0.3.4"
+tabulate = "^0.9.0"
+click = "^8.1.7"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.2.1"
+pytest = "^8.0.1"
+pre-commit = "^3.6.2"
+pytest-cov = "^4.1.0"
+asciinema = "^2.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 99
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+ignore = [
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+combine-as-imports = true
