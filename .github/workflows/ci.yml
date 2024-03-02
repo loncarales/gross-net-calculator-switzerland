@@ -1,0 +1,43 @@
+name: CI
+
+on: [push]
+
+env:
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install prerequisites for Firefox
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libgtk-3-0 libasound2 libx11-xcb1
+
+    - name: Check out repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ env.PYTHON_VERSION }}
+      id: setup-python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '${{ env.PYTHON_VERSION }}'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Install Firefox
+      uses: browser-actions/setup-firefox@v1.5.0
+    - run: firefox --version
+
+    - name: Run unit tests and create coverage report
+      run: pytest --junitxml=coverage.xml --cov-report=term-missing:skip-covered --cov=main --cov=gross_net_calculator tests/ | tee coverage.txt
+
+    - name: Pytest coverage comment
+      uses: MishaKav/pytest-coverage-comment@main
+      with:
+        pytest-coverage-path: ./coverage.txt
+        junitxml-path: ./coverage.xml
