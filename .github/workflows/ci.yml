@@ -1,12 +1,17 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 env:
   PYTHON_VERSION: '3.11'
 
 jobs:
-  build:
+  unittest:
     runs-on: ubuntu-latest
 
     steps:
@@ -34,10 +39,12 @@ jobs:
     - run: firefox --version
 
     - name: Run unit tests and create coverage report
-      run: pytest --junitxml=coverage.xml --cov-report=term-missing:skip-covered --cov=main --cov=gross_net_calculator tests/ | tee coverage.txt
+      run: |
+        coverage run -m pytest tests/
+        coverage xml
 
-    - name: Pytest coverage comment
-      uses: MishaKav/pytest-coverage-comment@main
-      with:
-        pytest-coverage-path: ./coverage.txt
-        junitxml-path: ./coverage.xml
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
