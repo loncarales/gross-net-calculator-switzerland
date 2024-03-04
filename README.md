@@ -1,5 +1,8 @@
 # Gross Net Calculator Switzerland
 
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=loncarales_gross-net-calculator-switzerland&metric=coverage)](https://sonarcloud.io/summary/new_code?id=loncarales_gross-net-calculator-switzerland)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=loncarales_gross-net-calculator-switzerland&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=loncarales_gross-net-calculator-switzerland)
+
 The CLI-based tool is designed to help users calculate **approximate** monthly net salary from their gross income in Switzerland. 
 This tool utilizes Selenium, a web browser automation tool, to replicate user interactions with the **Lohncomputer** website.
 
@@ -10,7 +13,7 @@ This tool utilizes Selenium, a web browser automation tool, to replicate user in
 
 This Gross Net Calculator is tailored for Swiss residents, offering detailed net salary calculations from gross income. 
 It employs Python and integrates libraries like `click`, `InquirerPy`, `tabulate`, and `selenium` for a seamless command-line experience. 
-The application uniquely utilizes Selenium to emulate user interactions with the [Lohncomputer](http://www.lohncomputer.ch) website, 
+The application uniquely utilizes Selenium to emulate user interactions with the [Lohncomputer](https://www.lohncomputer.ch) website, 
 ensuring accurate and current data for calculating net salaries based on various personal and regional parameters.
 
 ## Demo
@@ -93,5 +96,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) f
 <div align="center">
 
 Developed with ❤️ by Aleš Lončar
+
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=loncarales_gross-net-calculator-switzerland)
 
 </div>
