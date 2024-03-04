@@ -23,12 +23,12 @@ run: ## Run the application
 .PHONY: test
 test: ## Run tests
 	@echo "Running tests..."
-	@poetry run pytest tests/
+	@poetry run coverage run -m pytest tests/
 
 .PHONY: coverage
-coverage: ## Build coverage files
-	@echo "Build coverage files..."
-	@poetry run pytest --junitxml=coverage.xml --cov-report=term-missing:skip-covered --cov=main --cov=gross_net_calculator tests/ | tee coverage.txt
+coverage: ## Show code coverage
+	@echo "Show code coverage ..."
+	@poetry run coverage report -m
 
 .PHONY: help
 help:
