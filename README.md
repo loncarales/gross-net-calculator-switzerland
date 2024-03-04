@@ -13,8 +13,7 @@ This tool utilizes Selenium, a web browser automation tool, to replicate user in
 
 This Gross Net Calculator is tailored for Swiss residents, offering detailed net salary calculations from gross income. 
 It employs Python and integrates libraries like `click`, `InquirerPy`, `tabulate`, and `selenium` for a seamless command-line experience. 
-The application uniquely utilizes Selenium to emulate user interactions with the [Lohncomputer](https://www.lohncomputer.ch) website, 
-ensuring accurate and current data for calculating net salaries based on various personal and regional parameters.
+The application uniquely utilizes Selenium to emulate user interactions with the [Lohncomputer](https://www.lohncomputer.ch) website.
 
 ## Demo
 
@@ -66,7 +65,7 @@ make run
 
 You will be prompted to enter your gross monthly wage in CHF and your age in years. 
 Then, you will be asked to provide additional information such as church membership, status, children, and canton of residence. 
-The program will automate interactions with the Lohncomputer website to provide accurate net salary calculations 
+The program will automate interactions with the Lohncomputer website to provide approximate net salary calculations 
 based on the provided inputs and display the results in a tabular format.
 
 ### Makefile Commands
