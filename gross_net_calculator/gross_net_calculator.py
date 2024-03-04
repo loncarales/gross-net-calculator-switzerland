@@ -59,9 +59,10 @@ class GrossNetCalculator:
 
             # Church member
             checkbox = self.driver.find_element(By.ID, "church")
-            if church_member.lower() == "no" and not checkbox.is_selected():
-                checkbox.click()
-            elif church_member.lower() == "yes" and checkbox.is_selected():
+            is_church_member = church_member.lower() == "yes"
+            if (is_church_member and checkbox.is_selected()) or (
+                not is_church_member and not checkbox.is_selected()
+            ):
                 checkbox.click()
 
             # Status
