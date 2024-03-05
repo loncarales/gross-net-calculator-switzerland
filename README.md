@@ -34,8 +34,9 @@ These instructions will guide you through setting up the project on your local m
 
 ### Prerequisites
 
-- Python 3.11
-- [Poetry](https://python-poetry.org/docs/#installation) for managing dependencies
+- **Python 3.11**: Make sure you have Python 3.11 installed on your system.
+- **Firefox Browser**: Required for Selenium automation. Make sure Firefox is installed on your system.
+- **Poetry**: Used for managing dependencies. To install Poetry please refer to the [official documentation](https://python-poetry.org/docs/).
 
 ### Installation
 
